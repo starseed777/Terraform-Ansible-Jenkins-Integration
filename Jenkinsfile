@@ -10,7 +10,7 @@ pipeline {
 
            sh label: "", returnStatus: true, script: 'terraform workspace new dev'
 
-           sh "terraform apply -extra-vars=dev.tfvars --auto-approve" 
+           sh "terraform apply -var-file=dev.tfvars --auto-approve" 
         }  
       }  
     }
