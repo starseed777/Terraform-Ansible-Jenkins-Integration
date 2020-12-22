@@ -2,24 +2,16 @@
 - name: Provisioning aws resources with this playbook
   hosts: localhost
   connection: local 
-  #remote_user: ansadmin
   gather_facts: false 
-  #become: false 
+  become_user: sudo 
+   
 
   tasks:
-  - name:
-    lineinfile:
-      path: /etc/sudoers
-      state: present
-      regexp: '^%sudo'
-      line: '%sudo ALL=(ALL) NOPASSWD: ALL'
-      validate: 'visudo -cf %s'
 
   - name: Install boto3
     pip:
       name: boto3
-      state: present
-    #become: true   
+      state: present   
 
   - name: Create s3 bucket
     s3_bucket:
