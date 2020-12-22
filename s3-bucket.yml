@@ -8,8 +8,10 @@
     pip:
       name: boto3
       state: present 
+    become: true 
 
   - name: Create s3 bucket
     s3_bucket:
       name: jenkyterraformjawnt
-      state: present 
+      state: present
+    become: true  
