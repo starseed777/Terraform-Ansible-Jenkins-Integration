@@ -7,7 +7,7 @@ pipeline {
       stage("s3 create bucket"){
         steps{
           script{
-            sh "ansible-playbook s3-bucket.yml"
+            invokeansi("s3-bucket.yml")
 
           }
         }
@@ -39,5 +39,9 @@ pipeline {
 def getterraformpath(){
   def tfHome = tool name: 'terraform', type: 'terraform'
   return tfHome
+}
+
+def invokeansi(playbook){
+  ansiblePlaybook installation: 'ansible', playbook: '${playbook}'
 }
 
