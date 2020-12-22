@@ -5,7 +5,7 @@ provider "aws" {
 terraform {
     
     backend "s3" {
-        bucket = "backupjawnt"
+        bucket = "bucketjawnt"
         key = "terraform.tfstate"
         region = "us-east-1"
         dynamodb_table = "tfbackup"
