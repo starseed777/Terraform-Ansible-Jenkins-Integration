@@ -1,16 +1,17 @@
 --- 
 - name: Provisioning aws resources with this playbook
   hosts: localhost
+  connection: local 
   #remote_user: ansadmin
-  #gather_facts: true 
-  become: false 
+  gather_facts: false 
+  #become: false 
 
   tasks:
   - name: Install boto3
     pip:
       name: boto3
       state: present
-    become: true   
+    #become: true   
 
   - name: Create s3 bucket
     s3_bucket:
