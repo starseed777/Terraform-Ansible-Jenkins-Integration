@@ -2,6 +2,7 @@
 - name: Provisioning aws resources with this playbook
   hosts: localhost
   remote_user: ansadmin
+  gather_facts: true 
   become: true 
 
   tasks:
