@@ -42,6 +42,6 @@ def getterraformpath(){
 }
 
 def invokeansi(playbook){
-  ansiblePlaybook become: true, installation: 'ansible', playbook: "${playbook} -b"
+  ansiblePlaybook become: true, installation: 'ansible', playbook: "${playbook} --become-user root"
 }
 
