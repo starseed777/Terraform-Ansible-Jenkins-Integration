@@ -9,3 +9,7 @@ variable "vpc_cidr" {
 variable "tenancy" {
     default = "default"
 }
+
+variable "subnet_cidr" {
+    default = "10.20.1.0/24"
+}
