@@ -12,8 +12,7 @@ pipeline {
           }
         }
       }
-    }
-    stages {
+    
       stage("Terraform init and apply - dev") { 
         steps{
 
@@ -34,7 +33,7 @@ pipeline {
           sh "terraform apply -var-file=prod.tfvars --auto-approve"
         }
       }  
-    }
+    } 
 }
 
 def getterraformpath(){
