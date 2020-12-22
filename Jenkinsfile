@@ -3,6 +3,16 @@ pipeline {
     environment {
       PATH = "${PATH}:${getterraformpath()}"
     }
+    stages{
+      stage("s3 create bucket"){
+        steps{
+          script{
+            creates3bucket("jenkyjawnt")
+
+          }
+        }
+      }
+    }
     stages {
       stage("Terraform init and apply - dev") { 
         steps{
@@ -30,4 +40,8 @@ pipeline {
 def getterraformpath(){
   def tfHome = tool name: 'terraform', type: 'terraform'
   return tfHome
+}
+
+def creates3bucket(bucketname){
+  sh returnStatus: true, script: 'aws s3 mb s3://bucketname --region us-east-1 '
 }
