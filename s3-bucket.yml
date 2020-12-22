@@ -3,7 +3,7 @@
   hosts: localhost
   connection: local 
   gather_facts: false 
-  become_user: sudo 
+  become_user: ansadmin 
    
 
   tasks:
