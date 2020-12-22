@@ -7,7 +7,7 @@ pipeline {
       stage("s3 create bucket"){
         steps{
           script{
-            creates3bucket("jenkyjawnt")
+            creates3bucket("jenkyterraformjawnt")
 
           }
         }
@@ -42,5 +42,5 @@ def getterraformpath(){
 }
 
 def creates3bucket(bucketname){
-  sh returnStatus: true, script: 'aws s3 mb s3://bucketname --region us-east-1 '
+  sh returnStatus: true, script: 'aws s3 mb s3://${bucketname} --region us-east-1 '
 }
