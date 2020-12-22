@@ -7,3 +7,7 @@ resource "aws_vpc" "main_vpc" {
     }
 }
 
+resource "aws_subnet" "public_subnet" {
+    cidr_block = var.public_subnet
+    vpc_id = aws_vpc.main_vpc.id
+}
