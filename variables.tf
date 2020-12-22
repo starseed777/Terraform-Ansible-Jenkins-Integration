@@ -11,5 +11,5 @@ variable "tenancy" {
 }
 
 variable "subnet_cidr" {
-    default = "10.20.1.0/24"
+    default = "10.20.0.0/24"
 }
