@@ -1,17 +1,16 @@
 --- 
 - name: Provisioning aws resources with this playbook
   hosts: localhost
-  #become: true 
+  remote_user: ansadmin
+  become: true 
 
   tasks:
   - name: Install boto3
     pip:
       name: boto3
-      state: present 
-    become: true 
+      state: present  
 
   - name: Create s3 bucket
     s3_bucket:
       name: jenkyterraformjawnt
       state: present
-    become: true  
