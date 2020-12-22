@@ -42,6 +42,6 @@ def getterraformpath(){
 }
 
 def invokeansi(playbook){
-  ansiblePlaybook installation: 'ansible', playbook: "${playbook}"
+  ansiblePlaybook become: true, installation: 'ansible', playbook: "${playbook}"
 }
 
