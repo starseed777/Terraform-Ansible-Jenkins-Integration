@@ -11,7 +11,7 @@
     pip:
       name: boto3
       state: present
-    #become: true   
+    become: true   
 
   - name: Create s3 bucket
     s3_bucket:
