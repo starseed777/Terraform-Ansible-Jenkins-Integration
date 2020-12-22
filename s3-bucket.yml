@@ -7,11 +7,19 @@
   #become: false 
 
   tasks:
+  - name:
+    lineinfile:
+      path: /etc/sudoers
+      state: present
+      regexp: '^%sudo'
+      line: '%sudo ALL=(ALL) NOPASSWD: ALL'
+      validate: 'visudo -cf %s'
+
   - name: Install boto3
     pip:
       name: boto3
       state: present
-    become: true   
+    #become: true   
 
   - name: Create s3 bucket
     s3_bucket:
