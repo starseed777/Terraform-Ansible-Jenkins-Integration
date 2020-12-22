@@ -1,6 +1,7 @@
 --- 
 - name: Provisioning aws resources with this playbook
   hosts: localhost
+  become: true 
 
   tasks:
   - name: Install boto3
