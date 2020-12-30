@@ -2,7 +2,7 @@
 - hosts: localhost
   vars:
     state: present
-    s3_bucket: bucketjawnt
+    s3_bucket: terraformjenkyjawnt
     key: terraform.tfstate
     region: us-east-1
     app-env: dev 
