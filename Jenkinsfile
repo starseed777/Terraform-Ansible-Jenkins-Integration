@@ -22,7 +22,7 @@ pipeline {
 
            sh "terraform workspace select dev"
 
-           sh "terraform apply -var-file=dev.tfvars --auto-approve" 
+           sh "ansible-playbook ansixterra.yml" 
         }  
       }
       stage("Terraform init and apply - prod") {
@@ -34,7 +34,7 @@ pipeline {
 
           sh "terraform workspace select prod"
 
-          sh "terraform apply -var-file=prod.tfvars --auto-approve"
+          sh "ansible-playbook ansixterra.yml" 
         }
       }  
     } 
