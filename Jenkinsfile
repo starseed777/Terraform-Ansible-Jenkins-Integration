@@ -20,6 +20,8 @@ pipeline {
 
            sh label: "", returnStatus: true, script: 'terraform workspace new dev'
 
+           sh "terraform select workspace dev"
+
            sh "terraform apply -var-file=dev.tfvars --auto-approve" 
         }  
       }
@@ -29,6 +31,8 @@ pipeline {
           sh "terraform init"
 
           sh label: "", returnStatus: true, script: 'terraform workspace new prod'
+
+          sh "terraform select workspace prod"
 
           sh "terraform apply -var-file=prod.tfvars --auto-approve"
         }
