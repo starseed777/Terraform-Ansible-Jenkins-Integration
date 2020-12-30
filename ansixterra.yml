@@ -1,0 +1,7 @@
+--- 
+- hosts: localhost
+  tasks:
+  - name: runs terraform scripts
+    terraform:
+      project_path: "./"
+      state: present 
