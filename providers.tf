@@ -8,6 +8,6 @@ terraform {
         bucket = "jenkyterraformjawnt"
         key = "terraform.tfstate"
         region = "us-east-1"
-        dynamodb_table = "tfbackup"
+        dynamodb_table = "dynamojawnt"
     }
 }
