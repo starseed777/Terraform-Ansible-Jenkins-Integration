@@ -33,7 +33,7 @@ pipeline {
           sh "terraform init"
 
           script{
-            invokeansi("ansixterra.yml")"--extra-vars app_env=prod"
+            invokeansi("ansixterra.yml") "--extra-vars app_env=prod"
           }
         }
       }  
