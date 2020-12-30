@@ -20,7 +20,9 @@ pipeline {
 
            sh "terraform init"
 
-           sh "ansible-playbook ansixterra.yml --extra-vars app_env=dev" 
+           script {
+             invokeansi("ansixterra.yml --extra-vars app_env=dev")
+           } 
         }  
       }
       stage("Terraform init and apply - prod") {
@@ -30,7 +32,9 @@ pipeline {
 
           sh "terraform init"
 
-          sh "ansible-playbook ansixterra.yml --extra-vars app_env=prod" 
+          script{
+            invokeansi("ansixterra.yml --extra-vars app_env=prod")
+          }
         }
       }  
     } 
