@@ -5,7 +5,7 @@
     s3_bucket: terraformjenkyjawnt
     key: terraform.tfstate
     region: us-east-1
-    app-env: dev 
+    app_env: dev 
   tasks:
 
   - name:
@@ -27,7 +27,7 @@
           bucket: "{{ s3_bucket }}"
           key: "{{ key }}"
           region: "{{ region }}"
-      variables_file: "{{ app-env }}.tfvars"
+      variables_file: "{{ app_env }}.tfvars"
       workspace: "{{ app_env }}"
   
        
