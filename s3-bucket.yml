@@ -10,7 +10,7 @@
 
   - name: Install boto3
     pip:
-      name: boto3
+      name: boto
       state: present   
 
   - name: Create s3 bucket
